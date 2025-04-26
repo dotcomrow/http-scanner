@@ -1,5 +1,4 @@
 def process(texts, settings):
-    # Placeholder idea extractor
     results = []
     for text in texts:
         findings = {
