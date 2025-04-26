@@ -1,2 +1,5 @@
 # http-scanner
-Opensource HTTP fetch-analyze-output processor.  Built in Python and using Suncoast Systems internal LLM infrastructure
+
+A modular, plugin-based scanning framework designed to fetch and process HTTP-accessible targets (websites, APIs, etc.).  
+Built for extensibility, supporting multiple input types, processors, and output destinations.
+

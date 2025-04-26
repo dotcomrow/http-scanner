@@ -1,0 +1,16 @@
+input:
+  plugin: http_input
+  settings:
+    urls:
+      - https://example.com
+
+processor:
+  plugin: idea_extractor
+  settings:
+    model: mistral
+    chunk_size: 2000
+
+output:
+  plugin: console_output
+  settings:
+    format: pretty
