@@ -2,7 +2,7 @@ input:
   plugin: http_input
   settings:
     urls:
-      - https://example.com
+      - https://examples.com
 
 processor:
   plugin: idea_extractor
