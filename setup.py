@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='http-scanner',
-    version='0.1.2',
+    version='0.1.3',
     author='dotcomrow',
     author_email='your-email@example.com',
     description='A modular, plugin-based HTTP scanning framework',
