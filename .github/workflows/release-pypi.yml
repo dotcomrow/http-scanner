@@ -48,6 +48,12 @@ jobs:
             git diff --cached --quiet || git commit -m "Bump version [skip ci]"
             git push
 
+      - name: Create and push Git tag
+        run: |
+              VERSION=$(python setup.py --version)
+              git tag v${VERSION}
+              git push origin v${VERSION}
+          
       - name: Create GitHub Release
         id: create_release
         uses: softprops/action-gh-release@v2
