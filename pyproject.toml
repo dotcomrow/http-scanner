@@ -9,7 +9,7 @@ description = "A modular, plugin-based HTTP scanning framework."
 authors = [
     { name="dotcomrow", email="administrator@suncoast.systems" }
 ]
-license = { text = "MIT" }
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
