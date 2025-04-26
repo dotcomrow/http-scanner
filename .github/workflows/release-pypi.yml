@@ -38,11 +38,11 @@ jobs:
         run: |
           bump2version patch --allow-dirty
         env:
-          BUMPVERSION_CURRENT_VERSION: $(python setup.py --version)
+          BUMPVERSION_CURRENT_VERSION: $(grep '^version =' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
 
       - name: Get bumped version
         id: version
-        run: echo "VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+        run: echo "VERSION=$(grep '^version =' pyproject.toml | sed 's/version = "\(.*\)"/\1/')" >> $GITHUB_ENV
         
       - name: Commit bumped version
         run: |
