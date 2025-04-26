@@ -40,6 +40,10 @@ jobs:
         env:
           BUMPVERSION_CURRENT_VERSION: $(python setup.py --version)
 
+      - name: Get bumped version
+        id: version
+        run: echo "VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+        
       - name: Commit bumped version
         run: |
             git config user.name "github-actions[bot]"
@@ -47,18 +51,17 @@ jobs:
             git add setup.py
             git diff --cached --quiet || git commit -m "Bump version [skip ci]"
             git push
-
+        
       - name: Create and push Git tag
         run: |
-              VERSION=$(python setup.py --version)
-              git tag v${VERSION}
-              git push origin v${VERSION}
-          
+            git tag v${{ env.VERSION }}
+            git push origin v${{ env.VERSION }}
+        
       - name: Create GitHub Release
-        id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          generate_release_notes: true
+            tag_name: v${{ env.VERSION }}
+            generate_release_notes: true
 
       - name: Build Package
         run: |
