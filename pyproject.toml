@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "http-scanner"
-version = "0.1.11"
+version = "0.1.12"
 description = "A modular, plugin-based HTTP scanning framework."
 authors = [
     { name="dotcomrow", email="administrator@suncoast.systems" }
